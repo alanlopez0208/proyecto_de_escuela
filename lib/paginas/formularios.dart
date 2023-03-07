@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_escuela/paginas/listaDatos.dart';
 import '../clases/datos.dart';
 import 'card.dart';
 
@@ -14,7 +15,8 @@ class miFormulario extends State<Formulario> {
   final _controladore = TextEditingController();
   final _controladorId = TextEditingController();
   List<Datos> _datos = [];
-  @override
+
+  @overrides
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -60,7 +62,7 @@ class miFormulario extends State<Formulario> {
 
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return ListaCards();
+                        return ListaDatos(_datos);
                       }));
                     } else {
                       String errores = "";
