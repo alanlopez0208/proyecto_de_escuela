@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_escuela/paginas/card2.dart';
 import 'package:proyecto_escuela/paginas/listaDatos.dart';
 import '../clases/datos.dart';
 import 'card.dart';
@@ -16,7 +17,7 @@ class miFormulario extends State<Formulario> {
   final _controladorId = TextEditingController();
   List<Datos> _datos = [];
 
-  @overrides
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -85,6 +86,20 @@ class miFormulario extends State<Formulario> {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          _datos.add(new Datos(
+            _controladorn.text,
+              _controladore.text,
+              _controladorId.text
+          ));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) {
+                return CardPage2(_datos);
+              }));
+        },
+        child: Icon(Icons.arrow_forward),
       ),
     );
   }

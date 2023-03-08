@@ -27,5 +27,4 @@ class ListaDatos extends StatelessWidget{
       ),
     );
   }
-
 }
